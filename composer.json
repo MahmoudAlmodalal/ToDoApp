@@ -6,6 +6,13 @@
     "license": "MIT",
     "require": {
         "php": "^8.1",
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+        "barryvdh/laravel-dompdf": "^3.1",
+=======
+>>>>>>> 77a97cf (Initial commit)
+>>>>>>> 1fea9de (update)
         "guzzlehttp/guzzle": "^7.2",
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
