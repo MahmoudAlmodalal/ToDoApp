@@ -1,0 +1,70 @@
+@extends('layouts.login')
+@section('title') sign up @endsection
+@section('content')
+        <div class="container d-flex align-items-center justify-content-center vh-100">
+      <div class="row justify-content-center">
+        <div class="col-lg-6 col-md-10">
+          <div class="card">
+            <div class="card-header bg-primary">
+              <div class="app-brand">
+                  <svg class="brand-icon" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid" width="30"
+                    height="33" viewBox="0 0 30 33">
+                    <g fill="none" fill-rule="evenodd">
+                      <path class="logo-fill-blue" fill="#7DBCFF" d="M0 4v25l8 4V0zM22 4v25l8 4V0z" />
+                      <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
+                    </g>
+                  </svg>
+
+                  <span class="brand-name">ToDo App</span>
+                </a>
+              </div>
+            </div>
+
+            <div class="card-body p-5">
+              <h4 class="text-dark mb-5">Sign Up</h4>
+
+              <form method="POST" action="{{route('sign-up.store')}}">
+                @csrf
+                <div class="row">
+                  <div class="form-group col-md-12 mb-4">
+                    <input value="{{old('name')}}" name="name" type="text" class="form-control input-lg" id="name" aria-describedby="nameHelp" placeholder="Name">
+                  </div>
+
+                  <div class="form-group col-md-12 mb-4">
+                    <input value="{{old('userName')}}" name="userName" type="text" class="form-control input-lg" id="username" aria-describedby="nameHelp" placeholder="Username">
+                  </div>
+                    <div class="form-group col-md-12 mb-4">
+                    <input value="{{old('email')}}" name="email" type="email" class="form-control input-lg" id="email" aria-describedby="emailHelp" placeholder="email">
+                  </div>
+
+                  <div class="form-group col-md-12 ">
+                    <input name="password" type="password" class="form-control input-lg" id="password" placeholder="Password">
+                  </div>
+
+                  <div class="form-group col-md-12 ">
+                    <input name="password_confirmation" type="password" class="form-control input-lg" id="cpassword" placeholder="Confirm Password">
+                  </div>
+
+                  <div class="col-md-12">
+                    <div class="d-inline-block mr-3">
+                      <label class="control control-checkbox">
+                        <input name="check" type="checkbox" />
+                        <div class="control-indicator"></div>
+                        I Agree the terms and conditions
+                      </label>
+                    </div>
+
+                    <button type="submit" class="btn btn-lg btn-primary btn-block mb-4">Sign Up</button>
+
+                    <p>Already have an account?
+                      <a class="text-blue" href="{{route('login')}}">Sign in</a>
+                    </p>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+@endsection
