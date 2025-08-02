@@ -40,9 +40,15 @@
     </script> --}}
 
     <div style="position: absolute; top:20px; right: 20px; z-index:9999;">
-        @if (session('success'))
-            <div class="alert alert-success" role="alert">
-                {{session('success')}}
+        @if(session('success'))
+            <div class="alert alert-success">
+                {{ session('success') }}
+            </div>
+        @endif
+
+        @if(session('error'))
+            <div class="alert alert-danger">
+                {{ session('error') }}
             </div>
         @endif
         @if ($errors->any())
